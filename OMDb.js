@@ -23,7 +23,9 @@ let showSearch = () => {
     thead.innerHTML = 'Results for "'+searchInput+'"'
     fetch('http://www.omdbapi.com/?t='+searchInput+'&apikey=cdc2242').then((response)=>{
     response.json().then((data)=>{
-
+        
+        console.log(data)
+        
         for(i=0;i<favourites.length;i++){
             if(favourites[i].innerHTML==data.Title+'('+data.Year+')'){
             addButton.style.backgroundColor = 'lightgrey'
